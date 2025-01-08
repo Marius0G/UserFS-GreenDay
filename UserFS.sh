@@ -11,6 +11,15 @@ while true; do
     useri_activi=$(who | awk '{print $1}' | sort | uniq)
     echo $useri_activi
 
+    # Se creeaza un folder pentru fiecare utilizator activ
+    for user in $active_users; do
+        user_dir="$ROOT_DIR/$user"
+
+        if [ ! -d "$user_dir" ]; then
+            mkdir -p "$user_dir"
+        fi
+        
+    done
  
     sleep 30
 done
