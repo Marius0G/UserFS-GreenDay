@@ -13,7 +13,7 @@ while true; do
     # Se creeaza un folder pentru fiecare utilizator activ
     for user in $useri_activi; do
         user_dir="$ROOT_DIR/$user"
-        echo "user"
+        
         if [ ! -d "$user_dir" ]; then
             mkdir -p "$user_dir"
         fi
