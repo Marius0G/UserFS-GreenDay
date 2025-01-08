@@ -8,7 +8,7 @@ mkdir -p "$ROOT_DIR"
 #loop infinit care se repeta la 30 de secunde
 while true; do
     
-    useri_activi=$(who)
+    useri_activi=$(who | awk '{print $1}' | sort | uniq)
     echo $useri_activi
 
  
