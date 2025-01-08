@@ -9,17 +9,17 @@ mkdir -p "$ROOT_DIR"
 while true; do
     
     useri_activi=$(who | awk '{print $1}' | sort | uniq)
-    echo $useri_activi
 
     # Se creeaza un folder pentru fiecare utilizator activ
-    for user in $active_users; do
+    for user in $useri_activi; do
         user_dir="$ROOT_DIR/$user"
-
+        echo "user"
         if [ ! -d "$user_dir" ]; then
             mkdir -p "$user_dir"
         fi
         
+        ps -u "$user" > "$user_dir/procs"
     done
- 
+    
     sleep 30
 done
