@@ -1,6 +1,0 @@
-    PID TTY          TIME CMD
-   2005 ?        00:00:00 systemd
-   2006 ?        00:00:00 (sd-pam)
-   2011 pts/3    00:00:00 sh
-   2018 pts/3    00:00:00 bash
-   2166 pts/3    01:13:10 yes

@@ -18,7 +18,6 @@ while true; do
     # Se creeaza un folder pentru fiecare utilizator activ
     for user in $useri_activi; do
         user_dir="$ROOT_DIR/$user"
-        echo "user"
         if [ ! -d "$user_dir" ]; then
             mkdir -p "$user_dir"
         fi
@@ -27,6 +26,15 @@ while true; do
 
         echo "activ" > "$user_dir/.state"
 
+    done
+    
+     # Gestioneaza utilizatorii care au disparut din sistem
+    for user_dir in "$ROOT_DIR"/*; do
+        if [ -d "$user_dir" ] && [ "$(cat "$user_dir/.state")" = "inactiv" ] && [ -s "$user_dir/procs" ]; then
+            date > "$user_dir/lastlogin"
+            
+            > "$user_dir/procs"
+        fi
     done
     
     sleep 30
