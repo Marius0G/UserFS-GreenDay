@@ -1,12 +1,8 @@
     PID TTY          TIME CMD
-    298 pts/0    00:00:00 bash
-    353 ?        00:00:00 systemd
-    354 ?        00:00:00 (sd-pam)
-    365 pts/1    00:00:00 bash
-   8562 pts/3    00:00:00 bash
-   9642 pts/4    00:00:00 bash
-  10166 pts/4    00:00:00 test.sh
-  10171 pts/4    00:00:00 sleep
-  10840 pts/5    00:00:00 bash
-  10958 pts/4    00:00:00 UserFS.sh
-  10966 pts/4    00:00:00 ps
+   1112 ?        00:00:00 systemd
+   1113 ?        00:00:00 (sd-pam)
+   1118 pts/4    00:00:00 sh
+   1253 pts/4    00:00:00 bash
+   5920 pts/6    00:00:00 sh
+   5927 pts/6    00:00:00 bash
+   5968 pts/6    00:00:00 nano

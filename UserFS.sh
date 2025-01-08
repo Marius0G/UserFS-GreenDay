@@ -10,15 +10,23 @@ while true; do
     
     useri_activi=$(who | awk '{print $1}' | sort | uniq)
 
+    # se actualizeaza starea utilizatorilor
+    for user_dir in "$ROOT_DIR"/*; do
+        [ -d "$user_dir" ] && echo "inactiv" > "$user_dir/.state"
+    done
+
     # Se creeaza un folder pentru fiecare utilizator activ
     for user in $useri_activi; do
         user_dir="$ROOT_DIR/$user"
-        echo "user"
+
         if [ ! -d "$user_dir" ]; then
             mkdir -p "$user_dir"
         fi
         
         ps -u "$user" > "$user_dir/procs"
+
+        echo "activ" > "$user_dir/.state"
+
     done
     
     sleep 30
